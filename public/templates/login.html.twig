@@ -1,0 +1,74 @@
+{% set url="/ideas/" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
+    <script rel="stylesheet" href="public/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="public/css/login.css">
+
+    <script src="public/js/jQuery.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script>
+        $(document).ready(function() {
+
+
+            var width = $(window).width();
+            var new_width = null;
+
+            if(width <= 650) {
+                $("label").css("display", "none");
+            }
+
+            $(window).resize(function() {
+
+                //new_width = screen.width;
+                new_width = $(window).width();
+
+                if(new_width <= 650) {
+                    $("label").css("display", "none");
+
+                }
+                else {
+                    $("label").css("display", "block");
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div id="login">
+    <div id="logo">
+        <img src="public/img/logo_login.png">
+    </div>
+    <div id="text">
+        {{ lang.text }}
+
+    </div>
+    <div id="form">
+        <form action="{{ url }}login" method="post" class="form-horizontal" role="form" style="">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" name="login" class="form-control" id="inputEmail3" placeholder="{{ lang.login }}" style="font-size: 24px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="password" name="pass" class="form-control" id="inputPassword3" placeholder="{{ lang.pass }}" style="font-size: 24px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <button type="submit" class="btn btn-default"  style="font-size: 24px;">{{ lang.btnLogin }}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

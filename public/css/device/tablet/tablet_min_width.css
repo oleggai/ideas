@@ -1,0 +1,213 @@
+#main {
+    background-color: deepskyblue;
+}
+
+#logo {
+    position: relative;
+    width: 23%;
+}
+
+#logo div {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    min-width: 140px;
+}
+
+#logo img {
+    width: 25%;
+    min-width: 120px;
+}
+
+#header_menu {
+    width: 74.2%;
+    float: right;
+}
+
+.link_hide {
+    display: none;
+}
+#hor_menu {
+    width: 60%;
+    float: left;
+    margin-right: 0;
+}
+
+#tool {
+    margin: 0;
+    float: right;
+    width: 40%;
+}
+
+#hor_menu div {
+    width: 33.333% !important;
+}
+#hor_menu div:last-child {
+    width: 33.333% !important;
+}
+
+
+#tool div i {
+    float: none !important;
+}
+
+#tool div img {
+    float: none !important;
+}
+
+#tool div {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    top: 49%;
+}
+
+#list ul li a span {
+    width: 100%;
+    height: 100%;
+    top: 25%;
+    margin-left: 1%;
+}
+
+
+#list ul li a span div {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#list ul li a span div:first-child {
+    float: none;
+    margin-top: 0;
+}
+
+#list ul li a span div:last-child {
+    margin: 0;
+    padding: 0;
+}
+
+.div_discussion_product {
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.info_discussion {
+    width: 45%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.info_discussion div:last-child span {
+    font-weight: 500;
+}
+
+.name_discussion {
+    width: 100%;
+    height: 55%;
+    float: left;
+    display: block;
+}
+
+.author_discussion {
+    width: 100%;
+    height: 50%;
+    float: left;
+    display: block;
+}
+
+.last_comment {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    clear: both;
+}
+
+.last_comment span {
+    color: darkgray;
+    width: 50%;
+    position: relative;
+    display: inline-block;
+    float: right;
+    font-weight: 600;
+}
+
+.mark_star {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.mark_star span {
+    text-align: right;
+}
+
+.count_comment {
+    width: 35%;
+    height: 50%;
+    display: inline-block;
+    position: relative;
+    float: right;
+}
+
+.count_comment span {
+    text-align: right;
+}
+
+
+#left_vertical_menu {
+    display: inline-block;
+}
+
+.chevron {
+    width: 15px !important;
+    height: 25px !important;
+    float: left;
+    position: absolute !important;
+    margin-top: -1px;
+    margin-left: 7%;
+    z-index: 2001;
+}
+
+#sort_star .chevron {
+    margin-left: 7% !important;
+}
+
+#sort_comment .chevron {
+    margin-left: 7% !important;
+}
+
+.border_right {
+    width: 2px !important;
+    height: 42px !important;
+    float: left;
+    position: absolute !important;
+    background-color: lightgray;
+    margin-top: -15px;
+    margin-left: 65%;
+}
+
+#sort_star .border_right {
+    margin-left: 65%;
+}
+
+.div_border_sort {
+    width: 88% !important;
+    height: 4px !important;
+    float: left;
+    position: absolute !important;
+    background-image: url("../img/background.png");
+    background-repeat: repeat-x repeat-y;
+    margin-top: 29px;
+    margin-left: -22%;
+}
+
+#sort_comment .div_border_sort {
+    width: 79% !important;
+    margin-left: -22%;
+}

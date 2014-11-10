@@ -1,0 +1,151 @@
+{
+    "login": {
+        "login": "Login",
+        "pass": "Password",
+        "btnLogin": "Sign In",
+        "text" : "Nutricia için inovatif fikirlerini paylaş ve gelişme katkıda bulun! "
+    },
+
+    "admin": {
+        "userExists" : "Users with this login already exists",
+        "saved" : "Saved!",
+        "title" : "Admin Panel",
+        "users": "Users",
+        "topics": "Topics",
+        "shared": "Shared",
+        "adminPanel": "Admin Panel",
+        "user": {
+            "name": "Name",
+            "surname": "Surname",
+            "login": "Login",
+            "password": "Password",
+            "type": "Type",
+            "status": "Status",
+            "action": "Action",
+            "btnCreate" : "Create",
+            "btnUpdate" : "Update"
+        },
+        "action": {
+            "delete": "Delete",
+            "activate": "Activate"
+        },
+        "status": {
+            "active": "Active",
+            "deleted": "Deleted"
+        },
+        "newUser" : "New User",
+        "newTopic" : "New Topic",
+        "profile" : "Profile",
+        "logout" : "Logout",
+        "topic" : {
+            "title" : "Title",
+            "msg" : "Message",
+            "btnCreate" : "Create",
+            "btnFile" : "File",
+            "selectType" : "Select Type",
+            "btnPicture" : "Picture",
+            "btnVideo" : "Video",
+            "btnLocal" : "Local",
+            "btnLink" : "Link",
+            "selectVideoSrc" : "Select Video Source",
+            "selectPictureSrc" : "Select Picture Source",
+            "notValidUrl" : "Not Valid Url",
+            "videoTypeNotSupported" : "Sorry! This format not supported yet!",
+            "putLinkBellow" : "Put Link bellow",
+            "btnSave" : "Save",
+            "btnClose" : "Close"
+        },
+        "tooltips" : {
+            "changeStatus" : "Change status"
+        }
+
+    },
+
+    "main": {
+        "title" : "Ideas",
+        "all_topics": "All topics",
+        "my_topics": "My topics",
+        "admin_topics": "Admin topics",
+        "sort": {
+            "time": "Sort time",
+            "mark_star": "Sort mark",
+            "count_comment": "Sort comment"
+        },
+        "admin": {
+            "name": "Admin title",
+            "title": "Bussiness Administrator"
+        },
+        "new_topic": {
+            "title": "Title",
+            "message": "Type msg!",
+            "add_media": "Add media",
+            "error": "Error!",
+            "success": "Success!"
+        },
+        "button": {
+            "send": "Send",
+            "picture": "Picture",
+            "video": "Video",
+            "local": "Local",
+            "link": "Link",
+            "save": "Save",
+            "next": "Next",
+            "search": "Search",
+            "cancel": "Cancel"
+        },
+        "search_title": "Search",
+        "modal_window": {
+            "close": "Close",
+            "select_type": "Select Type",
+            "video_src": "Select video src",
+            "picture_src": "Select picture src",
+            "put_link": "Put link bellow",
+            "not_valid_url": "Not valid url!",
+            "message_support": "Sorry! This format not supported yet!"
+        },
+        "content_topics": {
+            "vote": "Vote",
+            "placeholder_comment": "Your comment..."
+        },
+
+        "popup": {
+            "message1": "Some text 1",
+            "message2": "Some text 2",
+            "message3": "Some text 3",
+            "message4": "Some text 4",
+            "message5": "Some text 5",
+            "message6": "Some text 6",
+            "message7": "Some text 7"
+
+        },
+
+        "num_step": {
+            "step1": "(1/7)",
+            "step2": "(2/7)",
+            "step3": "(3/7)",
+            "step4": "(4/7)",
+            "step5": "(5/7)",
+            "step6": "(6/7)",
+            "step7": "(7/7)"
+        }
+
+    },
+    "time" : {
+        "years" : "years",
+        "year" : "year",
+        "months" : "months",
+        "month" : "month",
+        "weeks" : "weeks",
+        "week" : "week",
+        "days" : "days",
+        "day" : "day",
+        "hours" : "hours",
+        "hour" : "hour",
+        "minutes" : "minutes",
+        "minute" : "minute",
+        "seconds" : "seconds",
+        "second" : "second",
+        "postedJustNow" : "posted just now",
+        "ago" : "ago"
+    }
+}

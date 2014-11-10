@@ -1,0 +1,154 @@
+{
+    "login": {
+        "login": "Giriş",
+        "pass": "Parola",
+        "btnLogin": "Giriş",
+        "text" : "Nutricia için inovatif fikirlerini paylaş ve gelişme katkıda bulun! "
+    },
+
+    "admin": {
+        "userExists" : "Users with this login already exists",
+        "saved" : "Saved!",
+        "title" : "Yönetici Panel Türü",
+        "users": "Kullanıcılar",
+        "topics": "Konular",
+        "shared": "Paylaşım",
+        "adminPanel": "Yönetyici Paneli",
+        "user": {
+            "name": "İsim",
+            "surname": "Soy isim",
+            "login": "Giriş",
+            "password": "Parola",
+            "type": "Tür",
+            "status": "Durum",
+            "action": "Aksiyon",
+            "btnCreate" : "Yarat",
+            "btnUpdate" : "Güncelle"
+        },
+        "action": {
+            "delete": "Sil",
+            "activate": "Aktive Et"
+        },
+        "status": {
+            "active": "Aktif",
+            "deleted": "Silinmiş"
+        },
+        "newUser" : "Yeni Kullanıcı",
+        "newTopic" : "Yeni Konu",
+        "profile" : "Profil",
+        "logout" : "Çıkış",
+        "topic" : {
+            "title" : "Başlık",
+            "msg" : "Mesaj",
+            "btnCreate" : "Yarat",
+            "btnFile" : "Dosya",
+            "selectType" : "Tür Seç",
+            "btnPicture" : "Resim",
+            "btnVideo" : "Video",
+            "btnLocal" : "Lokal",
+            "btnLink" : "Link",
+            "selectVideoSrc" : "Video Kaynağı Seç",
+            "selectPictureSrc" : "Resim Kaynağı Seç",
+            "notValidUrl" : "Geçersiz URL",
+            "videoTypeNotSupported" : "Bu format desteklenmiyor!",
+            "putLinkBellow" : "Link i aşağı kopyalayın",
+            "btnSave" : "Sakla",
+            "btnClose" : "Kapat"
+        },
+        "tooltips" : {
+            "changeStatus" : "Durum Değiştir"
+        }
+
+    },
+
+    "main": {
+        "title" : "BirFikrimVar",
+        "all_topics": "Fikir Kutusu",
+        "dd" : "Bütün Konular",
+        "my_topics": "Fikirlerim",
+        "dd":"Konularım",
+        "admin_topics": "Paylaşimlar",
+        "sort": {
+            "time": "Tarihe Göre",
+            "mark_star": "Puana Göre",
+            "dd" : "Popülerliğe göre",
+            "count_comment": "Çok Konuşulanlar",
+            "dd" : "Yorum sayısına göre"
+        },
+        "admin": {
+            "name": "Alican Tatli",
+            "title": "Bussiness Administrator"
+        },
+        "new_topic": {
+            "title": "Başlık",
+            "message": "Mesaj",
+            "add_media": "Media Ekle",
+            "error": "Hata!",
+            "success": "Başarıldı!"
+        },
+        "button": {
+            "send": "Devam",
+            "picture": "Resim",
+            "video": "Video",
+            "local": "Lokal",
+            "link": "Link",
+            "save": "Sakla",
+            "next": "Sonraki",
+            "search": "Search",
+            "cancel": "Cencel"
+        },
+        "search_title": "Search",
+        "modal_window": {
+            "close": "Kapat",
+            "select_type": "Tür Seç",
+            "video_src": "Video Kaynağı Seç",
+            "picture_src": "Resim Kaynağı Seç",
+            "put_link": "Link i aşağı kopyalayın",
+            "not_valid_url": "Geçersiz URL",
+            "message_support": "Bu format desteklenmiyor!"
+        },
+        "content_topics": {
+            "vote": "Puan ver",
+            "placeholder_comment": "Yorum Yap..."
+        },
+
+        "popup": {
+            "message1": "Paylaşılan bütün fikirleri buradan takip edip yorumlarınızı paylaşabilirsiniz",
+            "message2": "Fikirlerinizin son halini ve sürecini buradan takip edebilirsiniz",
+            "message3": "Nutricia ve inovasyon hakkında paylaşımlara buradan ulaşabilirsiniz",
+            "message4": "Fikirleri istediğiniz kritere gore buradan sıralayabilirsiniz",
+            "message5": "Fikir tekrarına düşmemek için anahtar kelimenizi içeren bütün fikirlere arama yaparak ulaşabilirsiniz",
+            "message6": "Fikirleriniz hakkındaki bildirimleri buradan takip edebilirsiniz",
+            "message7": "Fikirleriniz bu ikona tıklayarak paylaşabilirsiniz"
+
+        },
+
+        "num_step": {
+            "step1": "(1/7)",
+            "step2": "(2/7)",
+            "step3": "(3/7)",
+            "step4": "(4/7)",
+            "step5": "(5/7)",
+            "step6": "(6/7)",
+            "step7": "(7/7)"
+        }
+    },
+    "time" : {
+        "years" : "Yıl",
+        "year" : "Yıl",
+        "months" : "Ay",
+        "month" : "Ay",
+        "weeks" : "Hafta",
+        "week" : "Hafta",
+        "days" : "Gün",
+        "day" : "Gün",
+        "hours" : "Saat",
+        "hour" : "Saat",
+        "minutes" : "Dakika",
+        "minute" : "Dakika",
+        "seconds" : "Saniye",
+        "second" : "Saniye",
+        "postedJustNow" : "Biraz önce gönderilen",
+        "ago" : "Önce"
+    }
+}

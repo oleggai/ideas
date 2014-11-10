@@ -1,0 +1,65 @@
+{% extends "admin.html.twig" %}
+{% block content %}
+    <style>
+        #users tr:hover{
+            cursor: pointer;
+        }
+    </style>
+    <table id="users" class="table table-striped table-hover tablesorter sorted-table">
+        <thead>
+        <tr>
+            <th>{{ lang.user.name }}</th>
+            <th>{{ lang.user.surname }}</th>
+            <th>{{ lang.user.login }}</th>
+            <th>{{ lang.user.password }}</th>
+            <th>{{ lang.user.type }}</th>
+            <th>{{ lang.user.status }}</th>
+            <th>{{ lang.user.action }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr onclick="location.href = '{{ url }}users/profile/{{ user.id }}'">
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.login }}</td>
+                <td>{{ user.pass }}</td>
+                <td>{{ user.type.type }}</td>
+                <td>
+                    <span class="label label-{% if user.deleted %}danger">{{ lang.status.deleted }}{% else %}success">{{ lang.status.active }}{% endif %}
+                    </span>
+                </td>
+                <td>
+                    {% if user.deleted %}
+                        <a class="users" data-link="{{ url }}users/activate/{{ user.id }}"
+                           data-toggle="tooltip" title="{{ lang.action.activate }}">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </a>
+                    {% else %}
+                        <a class="users" data-link="{{ url }}users/delete/{{ user.id }}"
+                           data-toggle="tooltip" title="{{ lang.action.delete }}">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </a>
+                    {% endif %}
+                </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+
+        $("a.users").bind("click", function(){
+            var link = $(this).attr("data-link");
+            var ans = confirm("Bu Kullaniciyi silmek istediginize emin misiniz?");
+            if(ans){
+                location.href = link;
+            }
+
+            return false;
+        });
+
+    </script>
+
+{% endblock %}

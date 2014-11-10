@@ -1,0 +1,226 @@
+{% extends "admin.html.twig" %}
+{% block content %}
+    {% for error in errors %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <strong>Error!</strong> {{ error }}
+        </div>
+    {% endfor %}
+    {% for success in successes %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <strong>Success!</strong> {{ success }}
+        </div>
+    {% endfor %}
+    <form id="new-topic-form" method="post" action="{{ url }}topics/create" enctype="multipart/form-data"
+          class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="input-title" class="col-sm-2 control-label">{{ lang.topic.title }}</label>
+
+            <div class="col-sm-10">
+                <input type="text" required="" name="topic-title" class="form-control" id="input-title"
+                       placeholder="{{ lang.topic.title }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-msg" class="col-sm-2 control-label">{{ lang.topic.msg }}</label>
+
+            <div class="col-sm-10">
+                <textarea class="form-control" required="" name="topic-msg" id="input-msg"
+                          placeholder="{{ lang.topic.msg }}"></textarea>
+                <input id="topic-input-file" type="file" class="hidden" name="topic-file"/>
+                <input id="topic-input-link" type="text" class="hidden" name="topic-link"/>
+                <input id="topic-input-type" value="image" type="text" class="hidden" name="topic-type"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" class="button btn btn-default" value="{{ lang.topic.btnCreate }}"/>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#topic-file">
+                    {{ lang.topic.btnFile }}
+                </button>
+                <label style="width: 100%; margin-top: 20px" id="link-label"></label>
+            </div>
+        </div>
+    </form>
+
+    <div class="modal fade" id="topic-file" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">{{ lang.topic.selectType }}</h4>
+                </div>
+                <div class="modal-footer">
+                    <button id="type-picture-btn" type="button" class="btn btn-default" data-dismiss="modal"
+                            data-toggle="modal" data-target="#topic-picture-modal">
+                        {{ lang.topic.btnPicture }}
+                    </button>
+                    <button id="type-video-btn" type="button" class="btn btn-default" data-dismiss="modal"
+                            data-toggle="modal" data-target="#topic-video-modal">
+                        {{ lang.topic.btnVideo }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="topic-video-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">{{ lang.topic.selectVideoSrc }}</h4>
+                </div>
+                <div class="modal-footer">
+                    <button id="local-video" type="button" class="btn btn-default" data-dismiss="modal">{{ lang.topic.btnLocal }}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal"
+                            data-target="#topic-link-modal">
+                        {{ lang.topic.btnLink }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="topic-picture-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">{{ lang.topic.selectPictureSrc }}</h4>
+                </div>
+                <div class="modal-footer">
+                    <button id="local-picture" type="button" class="btn btn-default" data-dismiss="modal">{{ lang.topic.btnLocal }}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal"
+                            data-target="#topic-link-modal">
+                        {{ lang.topic.btnLink }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="topic-link-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">{{ lang.topic.putLinkBellow }}</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="not-valid-url-msg" class="alert alert-danger hidden" role="alert">
+                        <button type="button" class="close"><span aria-hidden="true">&times;</span><span
+                                    class="sr-only">Close</span></button>
+                        {{ lang.topic.notValidUrl }}
+                    </div>
+                    <input id="file-link" type="text" class="form-control"/>
+                </div>
+                <div class="modal-footer">
+                    <button id="save-link" type="button" class="btn btn-default" data-dismiss="modal">{{ lang.topic.btnSave }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="video-not-supported" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">{{ lang.topic.videoTypeNotSupported }}</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ lang.topic.btnClose }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var supportedVideoFormats = [
+            {% for format in videoFormats %}
+            "{{ format }}",
+            {% endfor %}
+        ];
+
+        function isFormatSupported(f) {
+            return (supportedVideoFormats.indexOf(f) != -1) ? true : false;
+        }
+
+        function isUrl(s) {
+            //var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+            var regexp = /(.+)iframe(.+)src="()/
+            return regexp.test(s);
+            //return true;
+        }
+
+        $("#not-valid-url-msg .close").bind("click", function () {
+            $("#not-valid-url-msg").addClass("hidden");
+        });
+
+        $("#local-picture").bind("click", function () {
+            var input = $("input#topic-input-file");
+            input.attr("accept", "image/*");
+            input.trigger("click");
+        });
+
+        $("#local-video").bind("click", function () {
+            var input = $("input#topic-input-file"),
+                    types = supportedVideoFormats.join(", ");
+            input.attr("accept", "video/*");
+            input.trigger("click");
+        });
+
+        $("input#topic-input-file").bind("change", function(){
+            $("label#link-label").text($(this).val());
+        });
+
+        $("#type-video-btn").bind("click", function () {
+            $("#new-topic-form #topic-input-type").val("video");
+        });
+
+        $("#type-picture-btn").bind("click", function () {
+            $("#new-topic-form #topic-input-type").val("image");
+        });
+
+        $("#save-link").bind("click", function () {
+            var link = $("input#file-link").val(),
+                    msg = $("#not-valid-url-msg");
+            $("input#topic-input-file").val(null);
+            if ($("#new-topic-form #topic-input-type").val() == "video" && !isUrl(link)) {
+                msg.removeClass("hidden");
+                return false;
+            }
+            msg.addClass("hidden");
+            $("label#link-label").text(link);
+            $("#new-topic-form #topic-input-link").val(link);
+        });
+
+        $("#new-topic-form").submit(function () {
+            var file = document.getElementById('topic-input-file').files[0];
+            if (file && $("#new-topic-form #topic-input-type").val() == "video") {
+                if (!isFormatSupported(file['type'])) {
+                    $('#video-not-supported').modal("show");
+                    return false;
+                }
+            }
+
+        });
+
+        //var file = document.getElementById('file').files[0];
+    </script>
+
+
+{% endblock %}

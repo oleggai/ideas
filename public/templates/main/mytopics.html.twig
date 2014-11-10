@@ -1,0 +1,156 @@
+{% extends "main.html.twig" %}
+{% block menu %}
+    <ul>
+        <li>
+            <a href="{{ url }}main/topics">
+                <span>
+                    <div>
+                        <img src="{{ url }}public/img/1.png">
+                        <img src="{{ url }}public/img/hover/1.png">
+                    </div>
+                    <div> {{ lang.all_topics }} </div>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a class="menu-active" href="{{ url }}main/mytopics">
+                <span>
+                    <div>
+                        <img src="{{ url }}public/img/2.png">
+                        <img src="{{ url }}public/img/hover/2.png">
+                    </div>
+                    <div>{{ lang.my_topics }}</div>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ url }}main/shared">
+                <span>
+                    <div>
+                        <img src="{{ url }}public/img/3.png">
+                        <img src="{{ url }}public/img/hover/3.png">
+                    </div>
+                    <div>{{ lang.admin_topics }}</div>
+                </span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+{% block content %}
+    {% for topic in topics %}
+        <div class="discussion_product" data-id-discussion="{{ topic.id }}">
+            <div class="div_discussion_product">
+                <div class="info_discussion">
+                    <div class="name_discussion">
+                        <span>{{ topic.title }}</span>
+                    </div>
+                    <div class="author_discussion">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="mark_discussion">
+                    <div class="last_comment" data-time-create-discussion="{{ topic.id }}">
+                        <span>{{ topic.timeAgo }}</span>
+                    </div>
+                    <div class="mark_star" data-star-discussion="{{ topic.mark }}">
+                    <span>
+                           {% for i in range(1, topic.mark) if i > 0 %}
+                               {% if i is even %}
+                                   <i class="fa fa-star"></i>
+                            {% elseif i == topic.mark %}
+                                   <i class="fa fa-star-half"></i>
+                               {% endif %}
+                           {% endfor %}
+                    </span>
+                    </div>
+                    <div class="count_comment" data-count-comment="{{ topic.activeCommentsCount }}">
+                    <span>
+                          <i class="fa fa-comment" style="font-size: 14px; margin-right: 10px;"></i>
+                          <div style="display: inline-block; float: right; margin-right: 10px;">
+                              {{ topic.activeCommentsCount }}
+                          </div>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%; display: none;">
+                <div class="description">
+                    <p>
+                        {{ topic.message }}
+                    </p>
+                </div>
+                <div class="div_img">
+                    {%  if  topic.linkType == 1 and topic.fileType|length > 0 %}
+                        <div>
+                            <video class="video-js vjs-default-skin"
+                                   controls="controls" preload="auto">
+                                <source src="{{ topic.picture }}" type="{{ topic.fileType }}" />
+                            </video>
+                        </div>
+                    {% elseif topic.linkType == 1 %}
+                        <div class="topics-embed embed-responsive embed-responsive-16by9">
+                            <iframe autoplay="false" class="embed-responsive-item"
+                                    src="{{ topic.picture }}" ></iframe>
+
+
+                        </div>
+                    {% elseif topic.linkType == 2 %}
+                        <div class="topics-embed">
+                            <img style="margin: 15px 0 15px 0;  max-height: 100%; max-width: 100%;" src="{{ topic.picture }}" />
+                        </div>
+                    {% endif %}
+                    <!--
+                    <img src="{{ url }}public/img/product.jpg"
+                         style="margin: 15px 0 15px 0;  max-height: 100%; max-width: 100%;">
+                         -->
+                </div>
+                <div class="evaluate">
+                    <span>{{ lang.content_topics.vote }}</span>
+                  <span class="evaluate_star">
+                          {% for i in 1..5 %}
+                              {% if i*2 <= topic.getUsermark %}
+                                  <i class="glyphicon glyphicon-star" mark="{{ i*2 }}" ></i>
+                            {% else %}
+                                  <i class="glyphicon glyphicon-star empty" mark="{{ i*2 }}"></i>
+                              {% endif %}
+                          {% endfor %}
+                  </span>
+                </div>
+                <br>
+                <table class="table">
+                    {% for comment in topic.comments %}
+                        {% if comment.deleted == false %}
+                            <tr>
+                                <td class="author_comment">
+                                    <span>{{ comment.creator.name ~ ' ' ~ comment.creator.surname }}</span>
+                                </td>
+                                <td class="td_comment">
+                                    <p>
+                                        {{ comment.comment }}
+                                    </p>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    <tr>
+                        <td class="add_comment" colspan="2">
+
+                            <form onsubmit="return false;">
+                                <textarea style="float: left;" cols="20" name="comment" class="comment"
+                                          placeholder="{{ lang.content_topics.placeholder_comment }}"></textarea>
+                                <input type="button" value="{{ lang.button.send }}" class="send">
+                            </form>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+
+    {% endfor %}
+
+    <script src="{{ url }}public/js/main/topic.js"></script>
+{% endblock %}

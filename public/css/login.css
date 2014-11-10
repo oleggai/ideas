@@ -1,0 +1,51 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/background_login.png");
+    background-repeat: repeat-x repeat-y;
+}
+
+#login {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+#logo {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+#logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#text {
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+#form {
+    display: inline-block;
+    margin: 0 auto;
+    min-width: 300px;
+}
+
+#form .form-control{
+    height: 50px;
+}
+
+#form .btn{
+    padding: 12px 28px;
+}
+

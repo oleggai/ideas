@@ -1,0 +1,22 @@
+#page_404 {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+#text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#text p {
+    font-size: 52px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: #9966CC;
+}
+
+#text span {
+    font-size: 18px;
+}

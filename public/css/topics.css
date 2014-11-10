@@ -1,0 +1,76 @@
+#topics-accordion a {
+    color: #000;
+    text-decoration: none;
+}
+
+#topics-accordion a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+#topics-accordion .panel-heading {
+    background-color: rgb(231, 231, 231);
+}
+
+#topics-accordion .panel-heading {
+    min-height: 40px;
+    max-height: 100px;
+}
+
+#topics-accordion .panel-heading > div.topic-comments,
+#topics-accordion .panel-heading > div.topic-rate,
+#topics-accordion .panel-heading > div.topic-action {
+    float: right;
+}
+
+#topics-accordion .panel-heading > div {
+    float: left;
+}
+
+#topics-accordion .topic-title {
+    width: 20%;
+    text-align: center;
+}
+
+#topics-accordion .topic-author {
+    width: 20%;
+    text-align: center;
+}
+
+#topics-accordion .topic-time {
+    width: 20%;
+    text-align: center;
+}
+
+#topics-accordion .panel-heading > div.topic-time {
+    margin: 0 auto;
+    position: relative;
+}
+
+#topics-accordion .topic-action {
+    width: 5%;
+    text-align: center;
+}
+
+#topics-accordion .topic-rate {
+    width: 15%;
+    text-align: center;
+}
+
+#topics-accordion .topic-comments {
+    width: 15%;
+    text-align: center;
+}
+
+.topics-header p{
+    text-align: justify;
+}
+
+.topics-embed img{
+    height: 100%;
+    max-width: 100%;
+}
+
+.topics-embed{
+    text-align: center;
+}

@@ -1,0 +1,309 @@
+
+#header {
+    min-height: 70px;
+    border: 1px solid;
+    margin-bottom: 5px;
+    min-width: 320px;
+    box-shadow: 0 4px 2px -2px darkgray;
+    position: fixed;
+    z-index: 1000;
+}
+#left_vertical_menu {
+    z-index: 4005;
+    width: 200px;
+    background-color: lightgrey;
+    display: none;
+    margin-top: 0;
+    max-height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+#content {
+    width: 100%;
+    margin-top: 130px;
+    margin-left: 0;
+}
+
+#logo {
+    float: left;
+    width: 45%;
+    min-width: 80px;
+    display: inline-block;
+}
+
+#logo img {
+    float: left;
+    min-width: 80px;
+}
+
+#logo div {
+    float: left;
+    margin-left: 40px;
+    bottom: 7px;
+}
+
+#header_menu {
+    display: inline-block;
+    float: right;
+    margin-right: 4%;
+    width: 47%;
+}
+
+.link_hide {
+    display: none !important;
+}
+#hor_menu {
+    margin: 0 auto;
+    height: 45px;
+    position: relative;
+    width: 100%;
+}
+
+#hor_menu div {
+    height: 100%;
+    margin-top: 0;
+    position: relative;
+}
+
+#hor_menu div span {
+}
+
+#hor_menu i {
+    line-height: 45px;
+    font-size: 32px;
+    text-align: center;
+}
+
+#img_time {
+    position: relative;
+    margin-top: 10px !important;
+    height: 30px;
+}
+
+#tool {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    position: relative;
+    min-width: 140px;
+}
+
+#tool i {
+    font-size: 34px;
+}
+
+#hor_menu div {
+    width: 33.333% !important;
+}
+#hor_menu div:last-child {
+    width: 33.333% !important;
+}
+
+#tool div {
+    top:25%;
+}
+
+#list ul li a span {
+    margin-left: 0;
+}
+
+#div_sort_menu_mobile {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 73px;
+    position: fixed;
+    z-index: 2;
+    min-width: 320px;
+    box-shadow: 0 4px 15px 1px darkgray;
+}
+
+#button_menu {
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 4005;
+    display: inline-block;
+
+}
+#button_menu i {
+    color: #9966CC;
+    font-size: 28px;
+}
+
+
+.div_discussion_product {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+
+.info_discussion {
+    width: 45%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.info_discussion div {
+    overflow: hidden;
+}
+
+.info_discussion div:last-child span {
+    font-weight: 500;
+}
+
+.name_discussion {
+    width: 100%;
+    height: 50%;
+    float: left;
+    display: block;
+}
+
+.author_discussion {
+    width: 100%;
+    height: 50%;
+    float: left;
+    display: block;
+}
+
+.last_comment {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    clear: both;
+}
+
+.last_comment span {
+    color: darkgray;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    float: right;
+    font-weight: 600;
+}
+
+.mark_star {
+    width: 65%;
+    height: 50%;
+    position: relative;
+    display: inline-block;
+    float: right;
+    padding-right: 15px;
+    /*border: 1px solid;*/
+}
+
+.mark_star span {
+    text-align: right;
+}
+
+.count_comment {
+    width: 35%;
+    height: 50%;
+    display: inline-block;
+    position: relative;
+    float: right;
+}
+
+.count_comment span {
+    text-align: right;
+}
+
+#list {
+    display: inline-block;
+    width: 96%;
+}
+#button {
+    left: 37%;
+}
+
+.comment {
+    height: 30px;
+    width: 75%;
+    font-size: 16px;
+    text-align: justify !important;
+    resize: none;
+}
+
+.send {
+    height: 35px;
+    width: 23%;
+    float: right;
+    margin-right: 0;
+    color: #ffffff;
+    background-color: #9966CC;
+    border: 1px solid #9966CC;
+}
+
+.chevron {
+    width: 15px !important;
+    height: 25px !important;
+    float: left;
+    position: absolute !important;
+    margin-top: 10px;
+    margin-left: 7%;
+    z-index: 2001;
+}
+
+#sort_star .chevron {
+    margin-left: 7% !important;
+}
+
+#sort_comment .chevron {
+    margin-left: 7% !important;
+}
+
+.border_right {
+    width: 2px !important;
+    height: 42px !important;
+    float: left;
+    position: absolute !important;
+    background-color: lightgray;
+    margin-top: 1px;
+    margin-left: 45%;
+}
+
+#sort_star .border_right {
+    margin-left: 45%;
+}
+
+.div_border_sort {
+    width: 100% !important;
+    height: 4px !important;
+    float: left;
+    position: absolute !important;
+    background-image: url("../img/background.png");
+    background-repeat: repeat-x repeat-y;
+    margin-top: 40px;
+    margin-left: -55%;
+}
+
+#sort_comment .div_border_sort {
+    width: 100% !important;
+    margin-left: -55%;
+}
+
+#load_ajax {
+    width: 200px;
+    min-height: 30px;
+    position: fixed;
+    padding: 10px 5px 0 5px;
+    z-index: 5;
+    right: 25px;
+    top: 125px;
+    display: none;
+    background-color: lightgrey;
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+

@@ -1,0 +1,351 @@
+{% set url="/ideas/" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{{ lang.title }}</title>
+    <link rel="stylesheet" href="{{ url }}public/css/style.css">
+    <link rel="stylesheet" href="{{ url }}public/css/bootstrap.min.css">
+    {#<link rel="stylesheet" href="{{ url }}public/js/bootstrap.min.js">#}
+
+    <link rel="stylesheet" media="only all and (max-width: 660px)" href="{{ url }}public/css/device/mobile.css">
+    <link rel="stylesheet" media="only all and (min-width: 661px) and (max-width: 716px)"
+          href="{{ url }}public/css/device/tablet/tablet_min_width.css">
+    <link rel="stylesheet" media="only all and (min-width: 717px) and (max-width: 899px)"
+          href="{{ url }}public/css/device/tablet/tablet.css">
+    <link rel="stylesheet" media="only all and (min-width: 900px) and (max-width: 2000px)"
+          href="{{ url }}public/css/device/desktop.css">
+
+    <link rel="stylesheet" href="{{url}}public/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script src="{{ url }}public/js/jquery.min.js"></script>
+    <script src="{{ url }}public/js/jquery-ui.min.js"></script>
+    <script src="{{ url }}public/js/jquery.mobile.custom.min.js"></script>
+    <script src="{{ url }}public/js/bootstrap.js"></script>
+    <script src="{{ url }}public/js/sort.js"></script>
+
+    <script src="{{ url }}public/js/device/mobile.js"></script>
+    <script src="{{ url }}public/js/device/tablet.js"></script>
+
+    <script src="{{ url }}public/js/plugins/jquery.autosize.min.js"></script>
+
+    <script src="{{ url }}public/js/hover.js"></script>
+
+    <script src="{{ url }}public/js/search.js"></script>
+
+    <script src="{{ url }}public/js/load.js"></script>
+
+    <script src="{{ url }}public/js/main/tab_enter.js"></script>
+
+    <script src="{{ url }}public/js/main/comment.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            /*
+             document.getElementById("left_vertical_menu").addEventListener("touchmove", function(event) {
+             event.stopPropagation();
+             $
+             });
+             */
+            /*
+             $("#left_vertical_menu").hover(function() {
+             $("body").css("overflow", "hidden");
+             });
+             $("#content").hover(function() {
+             $("#left_vertical_menu").css("overflow", "hidden");
+             });
+             */
+
+
+            // Разрешение экрана
+            // var x = screen.width;
+            // Берем для теста разрешение клиентской части окна браузера
+            //var width = screen.width;
+            var width = $(window).width();
+            var new_width = null;
+
+            if (width <= 650) {
+                mobile();
+                toggle = 2;
+            }
+            // Прослушка события смены ориентации
+            window.addEventListener("orientationchange", function () {
+                // Выводим числовое значение ориентации
+                toggle = 2;
+                search_flag = 2;
+                //set_coords_search = true;
+                $("#search").css("display", "none");
+            }, false);
+            $(window).resize(function () {
+                search_flag = 2;
+                $("#search").css("display", "none");
+                //set_coords_search = true;
+
+                $("#button_menu").css("left", "10px");
+                $("#left_vertical_menu").css("display", "none");
+                //new_width = screen.width;
+                new_width = $(window).width();
+
+                if (new_width <= 650) {
+                    //alert("mobile");
+                    mobile();
+                }
+                else {
+                    tablet();
+                }
+            });
+
+            first_start = {% if user.firstStart %} true{% else %} false{% endif %};
+            if(first_start !== true) {
+                if(width >= 900) {
+                $("head").append('<script src="{{ url }}public/js/presentation.js"></scr'+  +'ipt>');
+                    $("#header").css("z-index", "auto");
+                }
+           }
+            else {
+                $("#header").css("z-index", "4001");
+            }
+
+        });
+    </script>
+
+</head>
+<body>
+<div id="main">
+<div id="button_menu">
+    <i class="glyphicon glyphicon-align-justify"></i>
+</div>
+
+<div id="header">
+    <div id="logo">
+        <div style="">
+            <img src="{{ url }}public/img/logo.png" style="width: 100%;">
+        </div>
+    </div>
+    <div id="header_menu">
+        <div id="hor_menu">
+
+            <div>
+                <a id="sort_time">
+                    <img src="{{ url }}public/img/time_icon.png" id="img_time">
+                    <span class="link_hide">{{ lang.sort.time }}</span>
+
+                    <span class="chevron down_sort">
+                        <img src="{{ url }}public/img/arrowinactive.png">
+                        <img src="{{ url }}public/img/arrowactive.png">
+                    </span>
+
+                    <span class="border_right"></span>
+                    <span class="div_border_sort"></span>
+                </a>
+            </div>
+            <div>
+                <a id="sort_star">
+                    <i class="glyphicon glyphicon-star"></i>
+                    <span class="link_hide">{{ lang.sort.mark_star }}</span>
+
+                    <span class="chevron down_sort">
+                        <img src="{{ url }}public/img/arrowinactive.png">
+                        <img src="{{ url }}public/img/arrowactive.png">
+                    </span>
+
+                    <span class="border_right"></span>
+                    <span class="div_border_sort"></span>
+                </a>
+            </div>
+            <div>
+                <a id="sort_comment">
+                    <i class="fa fa-comment"></i>
+                    <span class="link_hide">{{ lang.sort.count_comment }}</span>
+
+                    <span class="chevron down_sort">
+                        <img src="{{ url }}public/img/arrowinactive.png">
+                        <img src="{{ url }}public/img/arrowactive.png">
+                    </span>
+
+                    <span class="div_border_sort"></span>
+                </a>
+            </div>
+
+        </div>
+        <div id="tool">
+            <div style="float: left;"><i id="i_search" class="glyphicon glyphicon-search" style="float: left; cursor: pointer; color: #72519C;"></i></div>
+            <div style=" float: right;"><a href="{{ url }}logout"><img src="{{ url }}public/img/load_icon.png" style="float: right;"></a></div>
+        </div>
+    </div>
+</div>
+<div id="div_sort_menu_mobile"></div>
+<div id="left_vertical_menu">
+    <div id="admin">
+        <div>
+            <span>{{ user.name ~ ' ' ~ user.surname }}</span><br>
+            <span>{{ lang.admin.title }}</span>
+        </div>
+    </div>
+    <div id="list">
+        {% block menu %}
+            <ul>
+                <li>
+                    <a class="menu-active" href="{{ url }}main/topics">
+                <span>
+                    <div>
+                        <img src="{{ url }}public/img/1.png">
+                        <img src="{{ url }}public/img/hover/1.png">
+                    </div>
+                    <div> {{ lang.all_topics }} </div>
+                </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url }}main/mytopics">
+                <span>
+                    <div>
+                        <img src="{{ url }}public/img/2.png">
+                        <img src="{{ url }}public/img/hover/2.png">
+                    </div>
+                    <div>{{ lang.my_topics }}</div>
+                </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url }}main/shared">
+                <span>
+                    <div>
+                        <img src="{{ url }}public/img/3.png">
+                        <img src="{{ url }}public/img/hover/3.png">
+                    </div>
+                    <div>{{ lang.admin_topics }}</div>
+                </span>
+                    </a>
+                </li>
+            </ul>
+        {% endblock %}
+    </div>
+</div>
+
+<div id="content">
+<div id="button">
+    <a href="{{ url }}main/createTopic">
+        <img src="{{ url }}public/img/button.png" style="cursor: pointer; height: 100px;">
+    </a>
+</div>
+
+<div id="div_discussion" style="width: 100%; display: inline-block; margin: 0 auto; text-align: center;">
+{% block content %}
+{% endblock %}
+</div>
+</div>
+     <div id="popup">
+
+             <div id="text">
+                 <p>{{ lang.popup.message1 }}</p>
+             </div>
+             <div id="button_popup">
+                 <div id="button_tool">
+                    <div id="num_step">
+                        <span>{{ lang.num_step.step1 }}</span>
+                    </div>
+                    <input type="button" value="{{ lang.button.next }}" id="next">
+                    <a id="cancel">{{ lang.modal_window.close }}</a>
+                 </div>
+             </div>
+     </div>
+    <div id="opacity"></div>
+</div>
+
+<div id="search">
+    <input id="search_text" type="text" placeholder="{{ lang.button.search }}">
+    <input class="search_button" id="search_cancel" type="button" value="{{ lang.button.cancel }}">
+    <input class="search_button" id="search_button" type="button" value="{{ lang.search_title }}">
+</div>
+
+<div id="load_ajax">
+
+</div>
+
+<script>
+    //alert(first_start);
+    var message = {
+        "message1": "{{ lang.popup.message1 }}",
+        "message2": "{{ lang.popup.message2 }}",
+        "message3": "{{ lang.popup.message3 }}",
+        "message4": "{{ lang.popup.message4 }}",
+        "message5": "{{ lang.popup.message5 }}",
+        "message6": "{{ lang.popup.message6 }}",
+        "message7": "{{ lang.popup.message7 }}"
+
+    };
+    var num_step = {
+        "step1": "{{ lang.num_step.step1 }}",
+        "step2": "{{ lang.num_step.step2 }}",
+        "step3": "{{ lang.num_step.step3 }}",
+        "step4": "{{ lang.num_step.step4 }}",
+        "step5": "{{ lang.num_step.step5 }}",
+        "step6": "{{ lang.num_step.step6 }}",
+        "step7": "{{ lang.num_step.step7 }}"
+
+    };
+    $(document).ready(function () {
+        $(".div_discussion_product").on("click", function () {
+            $(this).next().slideToggle();
+            displayComment();
+        });
+     $('textarea').autosize();
+        $(".comment").css("height", "28px");
+
+        var id_topic = {{ id_topic }};
+        var id_comment = {{ id_comment }};
+        if(id_comment !== 0) {
+            var comment = $("[data-id-comment = "+ id_comment +"]");
+            var div_topic = $(comment).closest(".discussion_product");
+
+            $(div_topic).find("div:last-child").css("display", "inline-block");
+            $(".div_p").css("display", "block");
+            displayComment();
+            var coords_comment = $(comment).offset();
+            $("body, html").animate( {
+                scrollTop: coords_comment.top + 150
+            },1000);
+            return;
+        }
+
+        if(id_topic !== 0) {
+            var div_topic = $("[data-id-discussion = "+ id_topic +"]");
+            $(div_topic).find("div:last-child").css("display", "inline-block");
+            var coords_topic = $(div_topic).offset();
+            $("body, html").animate({
+                scrollTop: coords_topic.top
+            },1000);
+        }
+
+    });
+    function displayComment() {
+        //****************
+
+        var line_height_p = $("p:first").css("line-height");
+        line_height_p = parseInt(line_height_p);
+
+        $.each($(".div_p p"), function(index, elem) {
+            var height_p = $(elem).height();
+            if(height_p > line_height_p*2) {
+                $("i", $(elem)).css("display", "inline-block");
+            }
+            $("i", $(elem)).bind("click", function() {
+
+                $(elem).closest(".div_p").css("height", height_p + "px");
+                $(this).css("display", "none");
+            });
+        });
+
+        $(".div_p").css("height", line_height_p*2 + "px");
+
+
+        //***********************
+    }
+
+</script>
+
+</body>
+</html>

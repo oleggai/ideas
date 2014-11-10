@@ -1,0 +1,10 @@
+{
+    "require": {
+        "doctrine/orm": "2.4.*",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+        "classmap": ["application/libs/", "application/controller/", "application/models", "application/entity", "application/repository"],
+        "files": ["application/config/config.php"]
+    }
+}

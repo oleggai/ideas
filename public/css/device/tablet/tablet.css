@@ -1,0 +1,127 @@
+#main {
+    background-color: deepskyblue;
+
+}
+
+#logo div {
+    position: absolute;
+    bottom: 7px;
+}
+
+#header_menu {
+    width: 100%;
+}
+
+.link_hide {
+    display: none;
+}
+#hor_menu {
+    float: left;
+    width: 48%;
+}
+
+#tool {
+    margin-right: 0;
+    width: 32%;
+    border-bottom: 1px solid ;
+}
+
+#hor_menu div {
+    width: 33.333% !important;
+}
+#hor_menu div:last-child {
+    width: 33.333% !important;
+}
+
+#left_vertical_menu {
+    display: inline-block;
+}
+
+
+#tool div i {
+    float: none !important;
+}
+
+#tool div img {
+    float: none !important;
+}
+
+#tool div {
+    position: relative;
+    text-align: center;
+    top: 46%;
+    margin: 0 auto;
+    height: 55%;
+}
+
+#list ul li a span {
+    width: 100%;
+    height: 100%;
+    top: 25%;
+    margin-left: 1%;
+}
+
+
+#list ul li a span div {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#list ul li a span div:first-child {
+    float: none;
+    margin-top: 0;
+}
+
+#list ul li a span div:last-child {
+    margin: 0;
+    padding: 0;
+}
+
+.chevron {
+    width: 15px !important;
+    height: 25px !important;
+    float: left;
+    position: absolute !important;
+    margin-top: -1px;
+    margin-left: 7%;
+    z-index: 2001;
+}
+
+#sort_star .chevron {
+    margin-left: 7% !important;
+}
+
+#sort_comment .chevron {
+    margin-left: 7% !important;
+}
+
+.div_border_sort {
+    width: 88% !important;
+    height: 4px !important;
+    float: left;
+    position: absolute !important;
+    background-image: url("../img/background.png");
+    background-repeat: repeat-x repeat-y;
+    margin-top: 29px;
+    margin-left: -20%;
+}
+
+#sort_comment .div_border_sort {
+    width: 79% !important;
+    margin-left: -20%;
+}
+
+.border_right {
+    width: 2px !important;
+    height: 42px !important;
+    float: left;
+    position: absolute !important;
+    background-color: lightgray;
+    margin-top: -15px;
+    margin-left: 67%;
+}
+
+#sort_star .border_right {
+    margin-left: 67%;
+}
